@@ -9,7 +9,7 @@ source:
   sha256: 013c931850e8986518f1ee7792b049cd581a6fb91e77bddf6c8230a7adfeb732
 
 build:
-  number: 0
+  number: 1
   script_env:
     - CFLAGS="-Wno-int-conversion"
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
