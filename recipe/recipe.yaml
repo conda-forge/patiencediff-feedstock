@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 0.2.15
+  version: "0.2.18"
 
 package:
   name: patiencediff
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/patiencediff/patiencediff-${{ version }}.tar.gz
-  sha256: d00911efd32e3bc886c222c3a650291440313ee94ac857031da6cc3be7935204
+  sha256: a678d8252bfb060f1f280fd32d47d917d323e93e1a94ff4ddaaba693a6f66aad
 
 build:
-  number: 1
+  number: 0
   script:
     env:
       CFLAGS: "-Wno-int-conversion"
@@ -23,7 +23,7 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
     - if: build_platform != target_platform
-      then: 
+      then:
         - cross-python_${{ target_platform }}
         - python
   host:
