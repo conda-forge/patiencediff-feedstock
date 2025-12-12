@@ -16,12 +16,16 @@ build:
   script:
     env:
       CFLAGS: "-Wno-int-conversion"
-    content: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    content:
+      - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+      - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
+    - ${{ compiler('rust') }}
+    - cargo-bundle-licenses
     - if: build_platform != target_platform
       then:
         - cross-python_${{ target_platform }}
@@ -30,6 +34,7 @@ requirements:
     - pip
     - python
     - setuptools
+    - setuptools_rust
   run:
     - python
 
@@ -46,7 +51,9 @@ tests:
 
 about:
   license: GPL-2.0-or-later
-  license_file: COPYING
+  license_file:
+    - COPYING
+    - THIRDPARTY.YML
   summary: Python implementation of the patiencediff algorithm
   homepage: https://github.com/breezy-team/patiencediff
 
