@@ -12,7 +12,7 @@ source:
   sha256: a060953edd05521e6368245d6c70402308a7aea4f66a706b2d832721d1375679
 
 build:
-  number: 0
+  number: 1
   script:
     env:
       CFLAGS: "-Wno-int-conversion"
