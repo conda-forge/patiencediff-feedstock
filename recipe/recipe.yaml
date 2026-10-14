@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.0.0"
+  version: "1.0.1"
 
 package:
   name: patiencediff
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/patiencediff/patiencediff-${{ version }}.tar.gz
-  sha256: 5e01404836e0dcf2cd3a78fec5d18f6b60c1ab8239ad5d137d45ff26fef6fa7b
+  sha256: 9d080948c714dad7ce7f8750dce183a93d9ef5391e376eccc3cdb60d991ee628
 
 build:
   number: 0
